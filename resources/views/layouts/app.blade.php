@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#ffffff">
     <!-- CSS -->
     <!-- build:css css/all.min.css -->
-    <link rel="stylesheet" href="{{ mix('css/main.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <!-- endbuild -->
 </head>
 <body>
