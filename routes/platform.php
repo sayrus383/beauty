@@ -100,11 +100,7 @@ Route::screen('example', ExampleScreen::class)
             ->push(__('Example screen'));
     });
 
-Route::screen('example-fields', ExampleFieldsScreen::class)->name('platform.example.fields');
-Route::screen('example-layouts', ExampleLayoutsScreen::class)->name('platform.example.layouts');
-Route::screen('example-charts', ExampleChartsScreen::class)->name('platform.example.charts');
-Route::screen('example-editors', ExampleTextEditorsScreen::class)->name('platform.example.editors');
-Route::screen('example-cards', ExampleCardsScreen::class)->name('platform.example.cards');
-Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');
-
-//Route::screen('idea', 'Idea::class','platform.screens.idea');
+// translations
+Route::screen('translations/{translation}/edit', \App\Orchid\Screens\Translation\FormScreen::class)->name('platform.translations.edit');
+Route::screen('translations/create', \App\Orchid\Screens\Translation\FormScreen::class)->name('platform.translations.create');
+Route::screen('translations', \App\Orchid\Screens\Translation\ListScreen::class)->name('platform.translations.list');

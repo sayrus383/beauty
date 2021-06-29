@@ -3,10 +3,9 @@
 namespace App\Orchid;
 
 use Orchid\Platform\Dashboard;
+use Orchid\Screen\Actions\Menu;
 use Orchid\Platform\ItemPermission;
 use Orchid\Platform\OrchidServiceProvider;
-use Orchid\Screen\Actions\Menu;
-use Orchid\Support\Color;
 
 class PlatformProvider extends OrchidServiceProvider
 {
@@ -26,7 +25,9 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return  [
-
+            Menu::make('Переводы')
+                ->route('platform.translations.list')
+                ->title('Системное'),
         ];
     }
 
