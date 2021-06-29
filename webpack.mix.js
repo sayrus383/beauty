@@ -1,17 +1,31 @@
 const mix = require('laravel-mix');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel applications. By default, we are compiling the CSS
- | file for the application as well as bundling up all the JS files.
- |
- */
+mix.options({
+    processCssUrls: false
+}).version();
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.copy('resources/js/jquery.min.js', 'public/js')
+    .copy('resources/js/gsap.min.js', 'public/js')
+    .copy('resources/js/ScrollMagic.min.js', 'public/js')
+    .copy('resources/js/animation.gsap.min.js', 'public/js')
+    .copy('resources/js/SmoothScroll.js', 'public/js')
+    .copy('resources/js/swiper.min.js', 'public/js')
+    .copy('resources/js/select2.full.min.js', 'public/js')
+    .copy('resources/js/jquery.fancybox.min.js', 'public/js')
+    .copy('resources/js/bootstrap-slider.min.js', 'public/js')
+    .copy('resources/js/slider.js', 'public/js')
+    .copy('resources/js/common.js', 'public/js')
+
+
+mix.styles([
+    'resources/css/bootstrap.css',
+    'resources/css/swiper.min.css',
+    'resources/css/jquery.fancybox.min.css',
+    'resources/css/select2.min.css',
+    'resources/css/bootstrap-slider.min.css',
+    'resources/css/main.css',
+], 'public/css/app.css');
+
+
+mix.copyDirectory('resources/img', 'public/img');
+mix.copyDirectory('resources/fonts', 'public/fonts');
