@@ -37,9 +37,9 @@ class FormScreen extends TranslationsScreen
     {
         return [
             Input::make('service.name')
-                ->title('Название'),
+                ->title('Название')->required(),
             TextArea::make('service.description')
-                ->title('Описание')
+                ->title('Описание')->required()
         ];
     }
 
@@ -49,6 +49,7 @@ class FormScreen extends TranslationsScreen
             Layout::rows([
                 Picture::make('service.image')
                     ->targetId()
+                    ->required()
                     ->title('Фото'),
             ])
         ];
@@ -57,7 +58,7 @@ class FormScreen extends TranslationsScreen
 
     public function save(Service $service, Request $request)
     {
-        $service->fill($request->all());
+        $service->fill($request->input('service'));
         $service->save();
 
         if ($request->has('service.image')){
@@ -66,6 +67,6 @@ class FormScreen extends TranslationsScreen
 
         Toast::info('Услуга сохранена');
 
-        return redirect()->route('platform.service.list');
+        return redirect()->route('platform.services.list');
     }
 }
