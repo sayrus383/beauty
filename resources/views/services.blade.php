@@ -38,7 +38,7 @@
                         </p>
                     </div>
 
-                    @if ($service->price_list)
+                    @if (!empty($service->price_list))
                         <h2 class="section-title section-title--grey services-article__sub-title">Прайс</h2>
 
                         @foreach(collect($service->price_list)->groupBy('name') as $name => $newServices)
