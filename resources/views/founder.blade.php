@@ -97,78 +97,40 @@
         </div>
     </article>
     <!-- Mention Section -->
-    <section class="mention-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="section-title section-title--grey mention-section__title">Упоминания в СМИ</h2>
-                    <div class="mention-slider swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide mention-slider__slide"><a class="mention-card" href="#">
-                                    <picture class="mention-card__picture"><img class="mention-card__img"
-                                                                                src="img/mention-img-1.jpg"
-                                                                                srcset="img/mention-img-1@2x.jpg 2x"
-                                                                                alt="alt"></picture>
-                                    <div class="mention-card__title">Ксения Соловьева об июньском номере Vogue Россия
-                                    </div>
-                                    <div class="mention-card__date">18 МАЯ 2021 Г.</div>
-                                </a></div>
-                            <div class="swiper-slide mention-slider__slide"><a class="mention-card" href="#">
-                                    <picture class="mention-card__picture"><img class="mention-card__img"
-                                                                                src="img/mention-img-2.jpg"
-                                                                                srcset="img/mention-img-2@2x.jpg 2x"
-                                                                                alt="alt"></picture>
-                                    <div class="mention-card__title">Как создавался фильм «Маржела: Своими словами» —
-                                        рассказывает его режиссер
-                                    </div>
-                                    <div class="mention-card__date">18 МАЯ 2021 Г.</div>
-                                </a></div>
-                            <div class="swiper-slide mention-slider__slide"><a class="mention-card" href="#">
-                                    <picture class="mention-card__picture"><img class="mention-card__img"
-                                                                                src="img/mention-img-3.jpg"
-                                                                                srcset="img/mention-img-3@2x.jpg 2x"
-                                                                                alt="alt"></picture>
-                                    <div class="mention-card__title">Окунитесь в мир моды 1990-х с новой книгой о дружбе
-                                        Аззедина Алайи и Питера Линдберга
-                                    </div>
-                                    <div class="mention-card__date">18 МАЯ 2021 Г.</div>
-                                </a></div>
-                            <div class="swiper-slide mention-slider__slide"><a class="mention-card" href="#">
-                                    <picture class="mention-card__picture"><img class="mention-card__img"
-                                                                                src="img/mention-img-1.jpg"
-                                                                                srcset="img/mention-img-1@2x.jpg 2x"
-                                                                                alt="alt"></picture>
-                                    <div class="mention-card__title">Ксения Соловьева об июньском номере Vogue Россия
-                                    </div>
-                                    <div class="mention-card__date">18 МАЯ 2021 Г.</div>
-                                </a></div>
-                            <div class="swiper-slide mention-slider__slide"><a class="mention-card" href="#">
-                                    <picture class="mention-card__picture"><img class="mention-card__img"
-                                                                                src="img/mention-img-2.jpg"
-                                                                                srcset="img/mention-img-2@2x.jpg 2x"
-                                                                                alt="alt"></picture>
-                                    <div class="mention-card__title">Как создавался фильм «Маржела: Своими словами» —
-                                        рассказывает его режиссер
-                                    </div>
-                                    <div class="mention-card__date">18 МАЯ 2021 Г.</div>
-                                </a></div>
-                            <div class="swiper-slide mention-slider__slide"><a class="mention-card" href="#">
-                                    <picture class="mention-card__picture"><img class="mention-card__img"
-                                                                                src="img/mention-img-3.jpg"
-                                                                                srcset="img/mention-img-3@2x.jpg 2x"
-                                                                                alt="alt"></picture>
-                                    <div class="mention-card__title">Окунитесь в мир моды 1990-х с новой книгой о дружбе
-                                        Аззедина Алайи и Питера Линдберга
-                                    </div>
-                                    <div class="mention-card__date">18 МАЯ 2021 Г.</div>
-                                </a></div>
+    @if ($posts->isNotEmpty())
+        <section class="mention-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="section-title section-title--grey mention-section__title">Упоминания в СМИ</h2>
+                        <div class="mention-slider swiper-container">
+                            <div class="swiper-wrapper">
+                                @foreach($posts as $post)
+                                    <div class="swiper-slide mention-slider__slide"><a class="mention-card"
+                                                                                       href="{{ route('posts.show', $post) }}">
+                                            <picture class="mention-card__picture"><img class="mention-card__img"
+                                                                                        src="{{ $post->image_url }}"
+                                                                                        srcset="{{ $post->image_url }} 2x"
+                                                                                        alt="{{ $post->title }}">
+                                            </picture>
+                                            <div class="mention-card__title">
+                                                {{ $post->title }}
+                                            </div>
+                                            <div class="mention-card__date">
+                                                {{ $post->published_at->format('d') }}
+                                                {{ months_name($post->published_at->format('m')) }}
+                                                {{ $post->published_at->format('Y') }}
+                                            </div>
+                                        </a></div>
+                                @endforeach
+                            </div>
                         </div>
+                        <div class="swiper-pagination mention-slider-pag"></div>
                     </div>
-                    <div class="swiper-pagination mention-slider-pag"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
     <!-- Founder Contacts Section -->
     <section class="founder-contacts-section">
         <div class="container">

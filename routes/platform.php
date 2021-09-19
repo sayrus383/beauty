@@ -132,6 +132,14 @@ Route::screen('/employees/form', \App\Orchid\Screens\Employee\FormScreen::class)
 Route::screen('/employees/form/{employee}', \App\Orchid\Screens\Employee\FormScreen::class)
     ->name('platform.employees.edit');
 
+//posts
+Route::screen('/posts', \App\Orchid\Screens\Post\ListScreen::class)
+    ->name('platform.posts.list');
+Route::screen('/posts/form', \App\Orchid\Screens\Post\FormScreen::class)
+    ->name('platform.posts.create');
+Route::screen('/posts/form/{post}', \App\Orchid\Screens\Post\FormScreen::class)
+    ->name('platform.posts.edit');
+
 //Variables
 Route::screen('variable/settings/edit', \App\Orchid\Screens\Variable\SettingScreen::class)
     ->name('platform.settings.form');
