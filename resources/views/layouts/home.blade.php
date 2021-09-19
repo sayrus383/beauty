@@ -111,46 +111,20 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-2 main-slide__col"><a class="main-slide-card" href="#">
-                                    <picture class="main-slide-card__picture"><img class="main-slide-card__img"
-                                                                                   src="img/main-slide-card-1.jpg"
-                                                                                   srcset="img/main-slide-card-1@2x.jpg 2x"
-                                                                                   alt="alt"></picture>
-                                    <div class="main-slide-card__descr">
-                                        <div class="main-slide-card__title">Укладка</div>
-                                        <div class="main-slide-card__price">От 5.000 ₽</div>
-                                    </div>
-                                </a></div>
-                            <div class="col-lg-2 main-slide__col"><a class="main-slide-card" href="#">
-                                    <picture class="main-slide-card__picture"><img class="main-slide-card__img"
-                                                                                   src="img/main-slide-card-2.jpg"
-                                                                                   srcset="img/main-slide-card-2@2x.jpg 2x"
-                                                                                   alt="alt"></picture>
-                                    <div class="main-slide-card__descr">
-                                        <div class="main-slide-card__title">Укладка</div>
-                                        <div class="main-slide-card__price">От 5.000 ₽</div>
-                                    </div>
-                                </a></div>
-                            <div class="col-lg-2 main-slide__col"><a class="main-slide-card" href="#">
-                                    <picture class="main-slide-card__picture"><img class="main-slide-card__img"
-                                                                                   src="img/main-slide-card-3.jpg"
-                                                                                   srcset="img/main-slide-card-3@2x.jpg 2x"
-                                                                                   alt="alt"></picture>
-                                    <div class="main-slide-card__descr">
-                                        <div class="main-slide-card__title">Укладка</div>
-                                        <div class="main-slide-card__price">От 5.000 ₽</div>
-                                    </div>
-                                </a></div>
-                            <div class="col-lg-2 main-slide__col"><a class="main-slide-card" href="#">
-                                    <picture class="main-slide-card__picture"><img class="main-slide-card__img"
-                                                                                   src="img/main-slide-card-4.jpg"
-                                                                                   srcset="img/main-slide-card-4@2x.jpg 2x"
-                                                                                   alt="alt"></picture>
-                                    <div class="main-slide-card__descr">
-                                        <div class="main-slide-card__title">Укладка</div>
-                                        <div class="main-slide-card__price">От 5.000 ₽</div>
-                                    </div>
-                                </a></div>
+                            @foreach($variable->getField('services', false) ?? [] as $service)
+                                <div class="col-lg-2 main-slide__col"><a class="main-slide-card"
+                                                                         href="{{ $service['link'] ?? '#' }}">
+                                        <picture class="main-slide-card__picture"><img class="main-slide-card__img"
+                                                                                       src="{{ $service['image'] ?? null }}"
+                                                                                       srcset="{{ $service['image' ?? null] }} 2x"
+                                                                                       alt="{{ $service['name'] ?? null }}">
+                                        </picture>
+                                        <div class="main-slide-card__descr">
+                                            <div class="main-slide-card__title">{{ $service['name'] ?? '-' }}</div>
+                                            <div class="main-slide-card__price">{{ $service['price'] ?? '-' }}</div>
+                                        </div>
+                                    </a></div>
+                            @endforeach
                             <div class="col-lg-4">
                                 <div class="main-slide-go"><a class="main-slide-go__link"
                                                               href="{{ route('salon.index') }}">Перейти на <br>страницу
@@ -166,8 +140,8 @@
             </div>
             <div class="swiper-slide">
                 <div class="main-slide">
-                    <picture class="main-slide__picture"><img class="main-slide__img" src="img/main-bg-2.jpg"
-                                                              srcset="img/main-bg-2@2x.jpg 2x" alt="alt"></picture>
+                    <picture class="main-slide__picture"><img class="main-slide__img" src="/img/main-bg-2.jpg"
+                                                              srcset="/img/main-bg-2@2x.jpg 2x" alt="alt"></picture>
                     <div class="container main-slide__container">
                         <div class="row">
                             <div class="col-12">
@@ -179,46 +153,24 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-2 main-slide__col"><a class="main-slide-product" href="#">
-                                    <picture class="main-slide-product__picture"><img class="main-slide-product__img"
-                                                                                      src="img/main-product-1.png"
-                                                                                      srcset="img/main-product-1@2x.png 2x"
-                                                                                      alt="alt"></picture>
-                                    <div class="main-slide-product__descr">
-                                        <div class="main-slide-product__title">Kevin.Murphy HYDRATE-ME</div>
-                                        <div class="main-slide-product__price">16 650.00 ₽</div>
-                                    </div>
-                                </a></div>
-                            <div class="col-lg-2 main-slide__col"><a class="main-slide-product" href="#">
-                                    <picture class="main-slide-product__picture"><img class="main-slide-product__img"
-                                                                                      src="img/main-product-2.png"
-                                                                                      srcset="img/main-product-2@2x.png 2x"
-                                                                                      alt="alt"></picture>
-                                    <div class="main-slide-product__descr">
-                                        <div class="main-slide-product__title">IS CLINICAL Youth serum</div>
-                                        <div class="main-slide-product__price">16 650.00 ₽</div>
-                                    </div>
-                                </a></div>
-                            <div class="col-lg-2 main-slide__col"><a class="main-slide-product" href="#">
-                                    <picture class="main-slide-product__picture"><img class="main-slide-product__img"
-                                                                                      src="img/main-product-3.png"
-                                                                                      srcset="img/main-product-3@2x.png 2x"
-                                                                                      alt="alt"></picture>
-                                    <div class="main-slide-product__descr">
-                                        <div class="main-slide-product__title">Kevin.Murphy Youth serum</div>
-                                        <div class="main-slide-product__price">16 650.00 ₽</div>
-                                    </div>
-                                </a></div>
-                            <div class="col-lg-2 main-slide__col"><a class="main-slide-product" href="#">
-                                    <picture class="main-slide-product__picture"><img class="main-slide-product__img"
-                                                                                      src="img/main-product-4.png"
-                                                                                      srcset="img/main-product-4@2x.png 2x"
-                                                                                      alt="alt"></picture>
-                                    <div class="main-slide-product__descr">
-                                        <div class="main-slide-product__title">Kevin.Murphy Youth serum</div>
-                                        <div class="main-slide-product__price">16 650.00 ₽</div>
-                                    </div>
-                                </a></div>
+                            @foreach($variable->getField('products', false) ?? [] as $product)
+                                <div class="col-lg-2 main-slide__col"><a class="main-slide-product"
+                                                                         href="{{ $product['link'] ?? '#' }}">
+                                        <picture class="main-slide-product__picture"><img
+                                                class="main-slide-product__img"
+                                                src="{{ $product['image'] ?? null }}"
+                                                srcset="{{ $product['image'] ?? null }} 2x"
+                                                alt="alt"></picture>
+                                        <div class="main-slide-product__descr">
+                                            <div class="main-slide-product__title">
+                                                {{ $product['name'] ?? '-' }}
+                                            </div>
+                                            <div class="main-slide-product__price">
+                                                {{ $product['price'] ?? '-' }}
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            @endforeach
                             <div class="col-lg-4">
                                 <div class="main-slide-go"><a class="main-slide-go__link"
                                                               href="{{ $settings->getField('link', false) }}">Перейти на

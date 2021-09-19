@@ -4,14 +4,50 @@ namespace App\Orchid\Screens\Variable;
 
 use App\Orchid\Screens\Abstraction\VariableScreen;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Matrix;
+use Orchid\Screen\Fields\Picture;
 use Orchid\Screen\Fields\Quill;
 use Orchid\Screen\Fields\TextArea;
+use Orchid\Support\Facades\Layout;
 
 class HomeScreen extends VariableScreen
 {
     public $variableKey = 'home';
 
     public $name = 'Главная страница (ПРОМО)';
+
+    protected function singleLanguageFields(): array
+    {
+        return [
+            Layout::rows([
+                Matrix::make('variable.data.services')
+                    ->title('Услуги')
+                    ->columns(['name', 'link', 'price', 'image'])
+                    ->fields([
+                        'name'  => Input::make()->required(),
+                        'link'  => Input::make()->required(),
+                        'price' => Input::make()->required(),
+                        'image' => Picture::make()
+                            ->targetUrl()
+                            ->required()
+                            ->title('Фото'),
+                    ]),
+
+                Matrix::make('variable.data.products')
+                    ->title('Продукты')
+                    ->columns(['name', 'link', 'price', 'image'])
+                    ->fields([
+                        'name'  => Input::make()->required(),
+                        'link'  => Input::make()->required(),
+                        'price' => Input::make()->required(),
+                        'image' => Picture::make()
+                            ->targetUrl()
+                            ->required()
+                            ->title('Фото'),
+                    ])
+            ])
+        ];
+    }
 
     protected function multiLanguageFields(): array
     {
