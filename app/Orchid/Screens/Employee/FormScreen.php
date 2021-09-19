@@ -65,7 +65,7 @@ class FormScreen extends TranslationsScreen
             Input::make('employee.address')
                 ->title('Адрес'),
             Input::make('employee.bc')
-                ->title('БЦ'),
+                ->title('Место'),
         ];
     }
 
@@ -74,7 +74,7 @@ class FormScreen extends TranslationsScreen
         $employee->fill($request->input('employee'));
         $employee->save();
 
-        if ($request->has('employee.image')){
+        if ($request->has('employee.image')) {
             $employee->attachment()->sync($request->input('employee.image'));
         }
 

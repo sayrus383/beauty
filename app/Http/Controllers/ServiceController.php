@@ -11,6 +11,11 @@ class ServiceController extends Controller
     {
         $services = Service::all();
         $service = $request->input('id') ? Service::find($request->input('id')) : $services->first();
+
+        if (is_null($service)) {
+            $service = Service::firstOrFail();
+        }
+
         $service->load('attachment');
 
         return view('services', compact('services', 'service'));

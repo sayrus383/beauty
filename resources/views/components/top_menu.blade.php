@@ -7,7 +7,8 @@
                                               href="{{ route('services.index') }}">Услуги</a></li>
                 <li class="top-menu__item"><a class="top-menu__link" href="{{ route('founder') }}">Об Основателе</a>
                 </li>
-                <li class="top-menu__item"><a class="top-menu__link" href="#">Контакты</a></li>
+                <li class="top-menu__item"><a class="top-menu__link"
+                                              href="{{ route('salon.index') }}#contacts">Контакты</a></li>
             </ul>
         </div>
         <div class="logo header__logo"><a class="logo__link" href="{{ route('salon.index') }}">

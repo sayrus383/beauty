@@ -10,7 +10,7 @@
                         </li>
                         <li class="footer-menu__item"><a class="footer-menu__link" href="{{ route('founder') }}">Об
                                 Основателе</a></li>
-                        <li class="footer-menu__item"><a class="footer-menu__link" href="#">Контакты</a></li>
+                        <li class="footer-menu__item"><a class="footer-menu__link" href="{{ route('salon.index') }}#contacts">Контакты</a></li>
                         <li class="footer-menu__item"><a class="footer-menu__link"
                                                          href="{{ $settings->getField('link', false) }}">Интернет
                                 магазин</a></li>

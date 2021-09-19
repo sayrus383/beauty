@@ -3,7 +3,7 @@
         <li class="mobile-menu__item"><a class="mobile-menu__link" href="{{ route('about') }}">О нас</a></li>
         <li class="mobile-menu__item"><a class="mobile-menu__link" href="{{ route('services.index') }}">Услуги</a></li>
         <li class="mobile-menu__item"><a class="mobile-menu__link" href="{{ route('founder') }}">Об Основателе</a></li>
-        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Контакты</a></li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="{{ route('salon.index') }}#contacts">Контакты</a></li>
         <li class="mobile-menu__item"><a class="mobile-menu__link" href="{{ $settings->getField('link', false) }}">
                 Интернет-магазин</a>
         </li>

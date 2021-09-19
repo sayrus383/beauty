@@ -193,169 +193,30 @@
                         @endforeach
                     </ul>
                     <div class="tabs__panes">
-                        <div class="tabs__pane on visible" id="tab-1">
-                            <div class="team-slider swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-1.jpg"
-                                                                                     srcset="img/team-1@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Мелани Меликсетян</div>
-                                            <div class="team-card__position">визажист</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-2.jpg"
-                                                                                     srcset="img/team-2@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Эла Садуева</div>
-                                            <div class="team-card__position">визажист</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-3.jpg"
-                                                                                     srcset="img/team-3@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Алла Литянова</div>
-                                            <div class="team-card__position">парикмахер-стилист</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-4.jpg"
-                                                                                     srcset="img/team-4@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Елизавета Орлова</div>
-                                            <div class="team-card__position">ногтевой сервис</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-5.jpg"
-                                                                                     srcset="img/team-5@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Елена Кравцов</div>
-                                            <div class="team-card__position">парикмахер- стилист</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-6.jpg"
-                                                                                     srcset="img/team-6@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Елена Метлина</div>
-                                            <div class="team-card__position">парикмахер-стилист</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-7.jpg"
-                                                                                     srcset="img/team-7@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Виктория Ефименко</div>
-                                            <div class="team-card__position">ногтевой сервис</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-8.jpg"
-                                                                                     srcset="img/team-8@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Елена Смирнова</div>
-                                            <div class="team-card__position">ногтевой сервис</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-9.jpg"
-                                                                                     srcset="img/team-9@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Сергей Кузнецов</div>
-                                            <div class="team-card__position">массажист</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-10.jpg"
-                                                                                     srcset="img/team-10@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Ольга Балакина</div>
-                                            <div class="team-card__position">массажист</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-11.jpg"
-                                                                                     srcset="img/team-11@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Сос Месропян</div>
-                                            <div class="team-card__position">стилист-колорист</div>
-                                        </a></div>
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-12.jpg"
-                                                                                     srcset="img/team-12@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Валерия Босенко</div>
-                                            <div class="team-card__position">визажист-бровист</div>
-                                        </a></div>
+                        @foreach($categories as $category)
+                            <div class="tabs__pane {{ $loop->first ? 'on visible' : null }}"
+                                 id="tab-{{ $category->id }}">
+                                <div class="team-slider swiper-container">
+                                    <div class="swiper-wrapper">
+                                        @foreach($employees as $employee)
+                                            @if ($employee->category_id == $category->id)
+                                                <div class="swiper-slide team-slider__slide"><a
+                                                        class="team-card call-popup"
+                                                        href="#team-popup-{{ $employee->id }}">
+                                                        <picture class="team-card__picture"><img class="team-card__img"
+                                                                                                 src="{{ $employee->image_url }}"
+                                                                                                 srcset="{{ $employee->image_url }} 2x"
+                                                                                                 alt="{{ $employee->name }}"></picture>
+                                                        <div class="team-card__name">{{ $employee->name }}</div>
+                                                        <div class="team-card__position">{{ $employee->position }}</div>
+                                                    </a></div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                    <div class="swiper-scrollbar"></div>
                                 </div>
-                                <div class="swiper-scrollbar"></div>
                             </div>
-                        </div>
-                        <div class="tabs__pane" id="tab-2">
-                            <div class="team-slider swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-1.jpg"
-                                                                                     srcset="img/team-1@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Мелани Меликсетян</div>
-                                            <div class="team-card__position">ногтевой сервис</div>
-                                        </a></div>
-                                </div>
-                                <div class="swiper-scrollbar"></div>
-                            </div>
-                        </div>
-                        <div class="tabs__pane" id="tab-3">
-                            <div class="team-slider swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-1.jpg"
-                                                                                     srcset="img/team-1@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Мелани Меликсетян</div>
-                                            <div class="team-card__position">Парикмахер-cтилист</div>
-                                        </a></div>
-                                </div>
-                                <div class="swiper-scrollbar"></div>
-                            </div>
-                        </div>
-                        <div class="tabs__pane" id="tab-4">
-                            <div class="team-slider swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide team-slider__slide"><a class="team-card call-popup"
-                                                                                    href="#team-popup-1">
-                                            <picture class="team-card__picture"><img class="team-card__img"
-                                                                                     src="img/team-1.jpg"
-                                                                                     srcset="img/team-1@2x.jpg 2x"
-                                                                                     alt="alt"></picture>
-                                            <div class="team-card__name">Мелани Меликсетян</div>
-                                            <div class="team-card__position">Массажист</div>
-                                        </a></div>
-                                </div>
-                                <div class="swiper-scrollbar"></div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -363,7 +224,7 @@
     </div>
 </section>
 <!-- Contacts Section -->
-<section class="contacts-section">
+<section class="contacts-section" id="contacts">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -450,44 +311,48 @@
         </div>
     </div>
 </div>
-<div class="popup team-popup" id="team-popup-1">
-    <div class="popup__inner">
-        <div class="popup__header">
-            <div class="popup__close">
-                <svg class="popup__close-icon" width="20" height="20">
-                    <use xlink:href="img/sprite.svg#close"></use>
-                </svg>
+@foreach($employees as $employee)
+    <div class="popup team-popup" id="team-popup-{{ $employee->id }}">
+        <div class="popup__inner">
+            <div class="popup__header">
+                <div class="popup__close">
+                    <svg class="popup__close-icon" width="20" height="20">
+                        <use xlink:href="/img/sprite.svg#close"></use>
+                    </svg>
+                </div>
+                <h3 class="popup__title">Команда</h3>
             </div>
-            <h3 class="popup__title">Команда</h3>
-        </div>
-        <div class="popup__body">
-            <div class="team-popup__person">
-                <div class="row align-items-center">
-                    <div class="col-sm-6">
-                        <picture class="team-popup__picture"><img class="team-popup__img" src="img/team-popup-1.jpg"
-                                                                  srcset="img/team-popup-1@2x.jpg 2x" alt="alt">
-                        </picture>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="team-popup__about">
-                            <div class="team-popup__name">Эла Садуева</div>
-                            <div class="team-popup__position">визажист</div>
-                            <div class="team-popup__address">Москва,<br>Цветной бульвар, д.2,</div>
-                            <div class="team-popup__place">БЦ «Легенда Цветного»</div>
+            <div class="popup__body">
+                <div class="team-popup__person">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <picture class="team-popup__picture"><img class="team-popup__img" src="{{ $employee->image_url }}"
+                                                                      srcset="{{ $employee->image_url }} 2x" alt="{{ $employee->name }}">
+                            </picture>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="team-popup__about">
+                                <div class="team-popup__name">{{ $employee->name }}</div>
+                                <div class="team-popup__position">{{ $employee->position }}</div>
+                                @if ($employee->address)
+                                    <div class="team-popup__address">{!! $employee->address !!}</div>
+                                @endif
+                                @if ($employee->bc)
+                                    <div class="team-popup__place">{{ $employee->bc }}</div>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="popup__descr">
-                <p>А также элементы политического процесса могут быть превращены в посмешище, хотя само их существование
-                    приносит несомненную пользу обществу. Сложно сказать, почему некоторые особенности внутренней
-                    политики освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы,
-                    разумеется, ассоциативно распределены по отраслям. Непосредственные участники технического прогресса
-                    представляют собой не что иное</p>
+                <div class="popup__descr">
+                    <p>
+                        {!! $employee->description !!}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+@endforeach
 <div class="popup mobile-menu" id="mobile-menu">
     <div class="popup__inner">
         <div class="popup__header">

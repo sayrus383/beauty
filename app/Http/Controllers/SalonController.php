@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Employee;
 use App\Models\Service;
-use Illuminate\Http\Request;
 
 class SalonController extends Controller
 {
@@ -12,7 +12,8 @@ class SalonController extends Controller
     {
         $services = Service::with('attachment')->get();
         $categories = Category::all();
+        $employees = Employee::with('attachment')->get();
 
-        return view('salon', compact('services', 'categories'));
+        return view('salon', compact('services', 'categories', 'employees'));
     }
 }
