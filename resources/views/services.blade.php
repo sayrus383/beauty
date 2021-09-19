@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Услуги')
+
 @section('content')
     <!-- Services Article -->
     <article class="services-article">

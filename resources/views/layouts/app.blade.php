@@ -7,26 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <!-- Title -->
-    <title>Services Page</title>
+    <title>@yield('title')</title>
     <!-- SEO Meta -->
     <meta name="description" content="">
     <meta name="keywords" content="">
     <!-- Favicon -->
     <meta property="og:image" content="img/image.jpg">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -37,95 +37,16 @@
 </head>
 <body>
 <!-- Preloader -->
-<div class="preloader" id="preloader"><img class="preloader__img" src="img/logo.svg" alt="logo"></div>
+<div class="preloader" id="preloader"><img class="preloader__img" src="/img/logo.svg" alt="logo"></div>
 <!-- Header -->
 <header class="header">
     <div class="container">
-        <div class="row">
-            <div class="col-12 header__col">
-                <div class="header__left">
-                    <ul class="top-menu">
-                        <li class="top-menu__item"><a class="top-menu__link" href="#">О нас</a></li>
-                        <li class="top-menu__item"><a class="top-menu__link"
-                                                      href="{{ route('services.index') }}">Услуги</a></li>
-                        <li class="top-menu__item"><a class="top-menu__link" href="#">Об Основателе</a></li>
-                        <li class="top-menu__item"><a class="top-menu__link" href="#">Контакты</a></li>
-                    </ul>
-                </div>
-                <div class="logo header__logo"><a class="logo__link" href="#">
-                        <svg class="logo__img" width="85" height="111">
-                            <use xlink:href="img/sprite.svg#logo"></use>
-                        </svg>
-                    </a></div>
-                <div class="header__right"><a class="header__phone" href="tel:+77010276651">+ 7 701 027 66 51</a><a
-                        class="header__shop" href="#"><span>Интернет-магазин</span>
-                        <svg class="header__shop-icon" width="7" height="7">
-                            <use xlink:href="img/sprite.svg#link"></use>
-                        </svg>
-                    </a><a class="mobile-menu-toggle call-popup" href="#mobile-menu">
-                        <svg class="mobile-menu-toggle__icon" width="27" height="11">
-                            <use xlink:href="img/sprite.svg#menu-toggle"></use>
-                        </svg>
-                    </a></div>
-            </div>
-        </div>
+        @include('components.top_menu')
     </div>
 </header>
 @yield('content')
 <!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 footer__col">
-                <nav class="footer-menu">
-                    <ul class="footer-menu__list">
-                        <li class="footer-menu__item"><a class="footer-menu__link" href="#">О нас</a></li>
-                        <li class="footer-menu__item"><a class="footer-menu__link" href="{{ route('services.index') }}">Услуги</a>
-                        </li>
-                        <li class="footer-menu__item"><a class="footer-menu__link" href="#">Наша команда</a></li>
-                        <li class="footer-menu__item"><a class="footer-menu__link" href="#">Контакты</a></li>
-                        <li class="footer-menu__item"><a class="footer-menu__link" href="#">Интернет магазин</a></li>
-                    </ul>
-                </nav>
-                <ul class="social social--grey footer__social">
-                    <li class="social__item"><a class="social__link" href="#">
-                            <svg class="social__icon" width="16" height="16">
-                                <use xlink:href="img/sprite.svg#instagram"></use>
-                            </svg>
-                        </a></li>
-                    <li class="social__item"><a class="social__link" href="#">
-                            <svg class="social__icon" width="20" height="14">
-                                <use xlink:href="img/sprite.svg#youtube"></use>
-                            </svg>
-                        </a></li>
-                    <li class="social__item"><a class="social__link" href="#">
-                            <svg class="social__icon" width="8" height="16">
-                                <use xlink:href="img/sprite.svg#facebook"></use>
-                            </svg>
-                        </a></li>
-                    <li class="social__item"><a class="social__link" href="#">
-                            <svg class="social__icon" width="18" height="14">
-                                <use xlink:href="img/sprite.svg#twitter"></use>
-                            </svg>
-                        </a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="footer__bottom">
-                    <div class="footer-copyright">© 2021 №1 Beauty. Все права защищены</div>
-                    <ul class="footer-info">
-                        <li class="footer-info__item"><a class="footer-info__link" href="#">Политика
-                                конфиденциальности</a></li>
-                        <li class="footer-info__item"><a class="footer-info__link" href="#">Медицинская лицензия</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+@include('components.footer')
 <!-- Popup -->
 <!-- Dark Bg -->
 <div class="dark-bg"></div>
