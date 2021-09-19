@@ -37,9 +37,10 @@
                             {{ $service->description }}
                         </p>
                     </div>
-                    <h2 class="section-title section-title--grey services-article__sub-title">Прайс</h2>
 
                     @if ($service->price_list)
+                        <h2 class="section-title section-title--grey services-article__sub-title">Прайс</h2>
+
                         @foreach(collect($service->price_list)->groupBy('name') as $name => $newServices)
                             <div class="faq-block {{ $loop->first ? 'on' : null }}">
                                 <div class="faq-block__toggle">
