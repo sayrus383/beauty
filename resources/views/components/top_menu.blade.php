@@ -14,10 +14,13 @@
                     <use xlink:href="/img/sprite.svg#logo"></use>
                 </svg>
             </a></div>
-        <div class="header__right"><a class="header__phone" href="tel:+77010276651">+ 7 701 027 66 51</a><a
-                class="header__shop" href="#"><span>Интернет-магазин</span>
+        <div class="header__right"><a class="header__phone"
+                                      href="tel:+{{ pretty_phone($settings->getField('phone_number', false)) }}">
+                {{ $settings->getField('phone_number', false) }}
+            </a><a
+                class="header__shop" href="{{ $settings->getField('link', false) }}"><span>Интернет-магазин</span>
                 <svg class="header__shop-icon" width="7" height="7">
-                    <use xlink:href="img/sprite.svg#link"></use>
+                    <use xlink:href="/img/sprite.svg#link"></use>
                 </svg>
             </a><a class="mobile-menu-toggle call-popup" href="#mobile-menu">
                 <svg class="mobile-menu-toggle__icon" width="27" height="11">

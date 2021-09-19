@@ -135,9 +135,9 @@
 <div class="popup mobile-menu" id="mobile-menu">
     <div class="popup__inner">
         <div class="popup__header">
-            <div class="logo mobile-menu__logo"><a class="logo__link" href="#">
+            <div class="logo mobile-menu__logo"><a class="logo__link" href="{{ route('salon.index') }}">
                     <svg class="logo__img" width="70" height="92">
-                        <use xlink:href="img/sprite.svg#logo"></use>
+                        <use xlink:href="/img/sprite.svg#logo"></use>
                     </svg>
                 </a></div>
             <div class="popup__close">
@@ -146,40 +146,7 @@
                 </svg>
             </div>
         </div>
-        <div class="popup__body">
-            <ul class="mobile-menu__list">
-                <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">О нас</a></li>
-                <li class="mobile-menu__item"><a class="mobile-menu__link"
-                                                 href="{{ route('services.index') }}">Услуги</a></li>
-                <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Наша команда</a></li>
-                <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Контакты</a></li>
-                <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Инетрнет-магазин</a></li>
-            </ul>
-            <div class="mobile-menu__phone"><a class="mobile-menu__phone-link" href="tel:+77010276651">+ 7 701 027 66
-                    51</a></div>
-            <ul class="social mobile-menu__social">
-                <li class="social__item"><a class="social__link" href="#">
-                        <svg class="social__icon" width="16" height="16">
-                            <use xlink:href="img/sprite.svg#instagram"></use>
-                        </svg>
-                    </a></li>
-                <li class="social__item"><a class="social__link" href="#">
-                        <svg class="social__icon" width="20" height="14">
-                            <use xlink:href="img/sprite.svg#youtube"></use>
-                        </svg>
-                    </a></li>
-                <li class="social__item"><a class="social__link" href="#">
-                        <svg class="social__icon" width="8" height="16">
-                            <use xlink:href="img/sprite.svg#facebook"></use>
-                        </svg>
-                    </a></li>
-                <li class="social__item"><a class="social__link" href="#">
-                        <svg class="social__icon" width="18" height="14">
-                            <use xlink:href="img/sprite.svg#twitter"></use>
-                        </svg>
-                    </a></li>
-            </ul>
-        </div>
+        @include('components.mobile')
     </div>
 </div>
 <div class="popup" id="search-popup">

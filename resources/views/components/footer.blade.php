@@ -9,30 +9,44 @@
                         </li>
                         <li class="footer-menu__item"><a class="footer-menu__link" href="#">Наша команда</a></li>
                         <li class="footer-menu__item"><a class="footer-menu__link" href="#">Контакты</a></li>
-                        <li class="footer-menu__item"><a class="footer-menu__link" href="#">Интернет магазин</a></li>
+                        <li class="footer-menu__item"><a class="footer-menu__link"
+                                                         href="{{ $settings->getField('link', false) }}">Интернет
+                                магазин</a></li>
                     </ul>
                 </nav>
                 <ul class="social social--grey footer__social">
-                    <li class="social__item"><a class="social__link" href="#">
-                            <svg class="social__icon" width="16" height="16">
-                                <use xlink:href="img/sprite.svg#instagram"></use>
-                            </svg>
-                        </a></li>
-                    <li class="social__item"><a class="social__link" href="#">
-                            <svg class="social__icon" width="20" height="14">
-                                <use xlink:href="img/sprite.svg#youtube"></use>
-                            </svg>
-                        </a></li>
-                    <li class="social__item"><a class="social__link" href="#">
-                            <svg class="social__icon" width="8" height="16">
-                                <use xlink:href="img/sprite.svg#facebook"></use>
-                            </svg>
-                        </a></li>
-                    <li class="social__item"><a class="social__link" href="#">
-                            <svg class="social__icon" width="18" height="14">
-                                <use xlink:href="img/sprite.svg#twitter"></use>
-                            </svg>
-                        </a></li>
+                    @if ($settings->getField('instagram', false))
+                        <li class="social__item"><a class="social__link"
+                                                    href="{{ $settings->getField('instagram', false) }}">
+                                <svg class="social__icon" width="16" height="16">
+                                    <use xlink:href="/img/sprite.svg#instagram"></use>
+                                </svg>
+                            </a></li>
+                    @endif
+                    @if ($settings->getField('youtube', false))
+                        <li class="social__item"><a class="social__link"
+                                                    href="{{ $settings->getField('youtube', false) }}">
+                                <svg class="social__icon" width="20" height="14">
+                                    <use xlink:href="/img/sprite.svg#youtube"></use>
+                                </svg>
+                            </a></li>
+                    @endif
+                    @if ($settings->getField('facebook', false))
+                        <li class="social__item"><a class="social__link"
+                                                    href="{{ $settings->getField('facebook', false) }}">
+                                <svg class="social__icon" width="8" height="16">
+                                    <use xlink:href="/img/sprite.svg#facebook"></use>
+                                </svg>
+                            </a></li>
+                    @endif
+                    @if ($settings->getField('twitter', false))
+                        <li class="social__item"><a class="social__link"
+                                                    href="{{ $settings->getField('twitter', false) }}">
+                                <svg class="social__icon" width="18" height="14">
+                                    <use xlink:href="/img/sprite.svg#twitter"></use>
+                                </svg>
+                            </a></li>
+                    @endif
                 </ul>
             </div>
         </div>

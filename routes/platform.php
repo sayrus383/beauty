@@ -115,3 +115,7 @@ Route::screen('/services/form', \App\Orchid\Screens\Service\FormScreen::class)
     ->name('platform.services.create');
 Route::screen('/services/form/{service}', \App\Orchid\Screens\Service\FormScreen::class)
     ->name('platform.services.edit');
+
+//Variables
+Route::screen('variable/settings/edit', \App\Orchid\Screens\Variable\SettingScreen::class)
+    ->name('platform.settings.form');
