@@ -25,7 +25,7 @@ $(document).ready(function() {
 
         let popupID = item.getAttribute("href");
         let popup = document.getElementById(popupID.slice(1));
-        
+
         item.addEventListener('click', event => {
             event.preventDefault();
             let activePopup = document.querySelector(".popup.is-visible");
@@ -66,7 +66,7 @@ $(document).ready(function() {
 
 
 
-    // Quantity 
+    // Quantity
     $('.quantity__plus').on('click', function() {
         $(this).parent('.quantity').find('.quantity__input').val(parseInt($(this).parent('.quantity').find('.quantity__input').val(), 10) + 1).change();
     });
@@ -84,7 +84,7 @@ $(document).ready(function() {
         // Allow: backspace, delete, tab, escape, enter and .
         if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
              // Allow: Ctrl+A, Command+A
-            (e.keyCode == 65 && ( e.ctrlKey === true || e.metaKey === true ) ) || 
+            (e.keyCode == 65 && ( e.ctrlKey === true || e.metaKey === true ) ) ||
              // Allow: home, end, left, right, down, up
             (e.keyCode >= 35 && e.keyCode <= 40)) {
                  // let it happen, don't do anything
@@ -105,7 +105,7 @@ $(document).ready(function() {
 
 
 
-    // Popup 
+    // Popup
     $("[data-fancybox]").fancybox({
         backFocus: false,
         centerOnScroll: true,
@@ -247,11 +247,11 @@ $(document).ready(function() {
 
             let tab = $(this).data('toggle');
             let tabs = $(this).closest('.tabs');
-            
+
             tabs.find('.tabs-toggle__item').each(function() {
                 $( this ).removeClass('on');
             });
-            
+
             $(this).addClass('on');
 
             tabs.find('.tabs__pane').each(function() {
@@ -268,7 +268,7 @@ $(document).ready(function() {
             }, 500);
 
         }
-        
+
     });
 
 
@@ -305,7 +305,7 @@ $(document).ready(function() {
         var str = slideEvt.value;
         str = str.toString();
         str = str.replace(",", "-");
-        
+
         $(this).parent('.price-line').find('.price-line__data-val').text(str);
     });
 
@@ -396,7 +396,7 @@ $(document).ready(function() {
     });
 
 
-    
+
 
 });
 
@@ -438,18 +438,12 @@ function initMap() {
         title: 'Московская область, Ул. Тихая, д 27, п. Заречье'
     });
 
-    $('#address-1').click(function() {
+    $('.show-map').click(function() {
         map.setCenter({
-            lat : 55.76784629679354,
-            lng : 37.62344347114432
+            lat : $(this).data('lat'),
+            lng : $(this).data('lng')
         });
     });
 
-    $('#address-2').click(function() {
-        map.setCenter({
-            lat : 55.68127805881979,
-            lng : 37.38883190063039
-        });
-    });
-
+    $('.show-map:first').click();
 }

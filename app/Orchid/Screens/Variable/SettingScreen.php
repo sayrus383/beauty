@@ -4,6 +4,8 @@ namespace App\Orchid\Screens\Variable;
 
 use App\Orchid\Screens\Abstraction\VariableScreen;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Map;
+use Orchid\Screen\Fields\Matrix;
 use Orchid\Support\Facades\Layout;
 
 class SettingScreen extends VariableScreen
@@ -39,6 +41,17 @@ class SettingScreen extends VariableScreen
 
                 Input::make('variable.data.phone_number')
                     ->title('Номер телефона'),
+
+                Matrix::make('variable.data.contacts')
+                    ->title('Контакты')
+                    ->columns(['address', 'place', 'schedule', 'phone_number', 'map'])
+                    ->fields([
+                        'address'      => Input::make()->required(),
+                        'place'        => Input::make()->required(),
+                        'schedule'     => Input::make()->required(),
+                        'phone_number' => Input::make()->required(),
+                        'map'          => Map::make(),
+                    ])
             ])
         ];
     }

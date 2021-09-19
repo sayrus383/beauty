@@ -206,7 +206,8 @@
                                                         <picture class="team-card__picture"><img class="team-card__img"
                                                                                                  src="{{ $employee->image_url }}"
                                                                                                  srcset="{{ $employee->image_url }} 2x"
-                                                                                                 alt="{{ $employee->name }}"></picture>
+                                                                                                 alt="{{ $employee->name }}">
+                                                        </picture>
                                                         <div class="team-card__name">{{ $employee->name }}</div>
                                                         <div class="team-card__position">{{ $employee->position }}</div>
                                                     </a></div>
@@ -239,24 +240,23 @@
             </div>
             <div class="col-lg-6 col-md-5">
                 <div class="contacts-section__contacts animation-fade-in">
-                    <div class="contacts-item">
-                        <div class="contacts-item__address" id="address-1">Москва, <br>Цветной бульвар, д.2,</div>
-                        <div class="contacts-item__text">
-                            <p>БЦ «Легенда Цветного»</p>
-                            <p>10:00-22:00 ежедневно</p>
-                            <p><a href="tel:+74955141170">+7(495)514-11-70</a></p>
+                    @foreach($settings->getField('contacts', false) ?? [] as $key => $setting)
+                        <div class="contacts-item">
+                            <div class="contacts-item__address show-map"
+                                 data-lat="{{ $setting['map']['lat'] ?? 0 }}"
+                                 data-lng="{{ $setting['map']['lng'] ?? 0 }}"
+                            >
+                                {!! $setting['address'] ?? null !!}
+                            </div>
+                            <div class="contacts-item__text">
+                                <p>{{ $setting['place'] ?? null }}</p>
+                                <p>{{ $setting['schedule'] ?? null }}</p>
+                                <p>
+                                    <a href="tel:+{{ pretty_phone($setting['phone_number'] ?? null) }}">{{ $setting['phone_number'] ?? null }}</a>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contacts-item">
-                        <div class="contacts-item__address" id="address-2">Московская область, <br>Ул. Тихая, д 27, п.
-                            Заречье,
-                        </div>
-                        <div class="contacts-item__text">
-                            <p>ЖК «Дом на Тихой»</p>
-                            <p>10:00-22:00 ежедневно</p>
-                            <p><a href="tel:+74955141170">+7(495)514-11-70</a></p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -326,8 +326,10 @@
                 <div class="team-popup__person">
                     <div class="row align-items-center">
                         <div class="col-sm-6">
-                            <picture class="team-popup__picture"><img class="team-popup__img" src="{{ $employee->image_url }}"
-                                                                      srcset="{{ $employee->image_url }} 2x" alt="{{ $employee->name }}">
+                            <picture class="team-popup__picture"><img class="team-popup__img"
+                                                                      src="{{ $employee->image_url }}"
+                                                                      srcset="{{ $employee->image_url }} 2x"
+                                                                      alt="{{ $employee->name }}">
                             </picture>
                         </div>
                         <div class="col-sm-6">
@@ -368,104 +370,6 @@
             </div>
         </div>
         @include('components.mobile')
-    </div>
-</div>
-<div class="popup" id="search-popup">
-    <div class="popup__inner">
-        <div class="popup__header">
-            <div class="popup__close">
-                <svg class="popup__close-icon" width="20" height="20">
-                    <use xlink:href="img/sprite.svg#close"></use>
-                </svg>
-            </div>
-            <h3 class="popup__title">Поиск</h3>
-        </div>
-        <div class="popup__body">
-            <form class="form search-form">
-                <div class="search-form__group">
-                    <input class="form__input search-form__input" type="text" name="inputSearch"
-                           placeholder="Введите поисковую фразу" required>
-                    <button class="button search-form__button">Искать</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="popup cart-popup" id="cart-popup">
-    <div class="popup__inner">
-        <div class="popup__header">
-            <div class="popup__close">
-                <svg class="popup__close-icon" width="20" height="20">
-                    <use xlink:href="img/sprite.svg#close"></use>
-                </svg>
-            </div>
-            <h3 class="popup__title">корзина</h3>
-        </div>
-        <div class="popup__body">
-            <div class="cart-item cart-item--popup">
-                <div class="cart-item__left">
-                    <picture class="cart-item__picture"><img class="cart-item__img" src="img/main-product-1.png"
-                                                             srcset="img/main-product-1@2x.png 2x" alt="alt"></picture>
-                    <div class="cart-item__descr">
-                        <h3 class="cart-item__title"><a class="cart-item__link" href="#">Kevin.Murphy HYDRATE-ME</a>
-                        </h3>
-                        <div class="cart-item__price">16 650.00 ₽ <span>x 2</span></div>
-                        <div class="quantity cart-item__quantity">
-                            <button class="quantity__minus" type="button">
-                                <svg class="quantity__icon" width="19" height="2">
-                                    <use xlink:href="img/sprite.svg#minus"></use>
-                                </svg>
-                            </button>
-                            <input class="quantity__input" type="text" name="inputCount" value="1">
-                            <button class="quantity__plus" type="button">
-                                <svg class="quantity__icon" width="19" height="19">
-                                    <use xlink:href="img/sprite.svg#plus"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <button class="cart-item__clear" type="button">
-                        <svg class="cart-item__clear-icon">
-                            <use xlink:href="img/sprite.svg#close"></use>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="cart-item cart-item--popup">
-                <div class="cart-item__left">
-                    <picture class="cart-item__picture"><img class="cart-item__img" src="img/main-product-2.png"
-                                                             srcset="img/main-product-2@2x.png 2x" alt="alt"></picture>
-                    <div class="cart-item__descr">
-                        <h3 class="cart-item__title"><a class="cart-item__link" href="#">Kevin.Murphy HYDRATE-ME</a>
-                        </h3>
-                        <div class="cart-item__price">16 650.00 ₽ <span>x 2</span></div>
-                        <div class="quantity cart-item__quantity">
-                            <button class="quantity__minus" type="button">
-                                <svg class="quantity__icon" width="19" height="2">
-                                    <use xlink:href="img/sprite.svg#minus"></use>
-                                </svg>
-                            </button>
-                            <input class="quantity__input" type="text" name="inputCount" value="1">
-                            <button class="quantity__plus" type="button">
-                                <svg class="quantity__icon" width="19" height="19">
-                                    <use xlink:href="img/sprite.svg#plus"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <button class="cart-item__clear" type="button">
-                        <svg class="cart-item__clear-icon">
-                            <use xlink:href="img/sprite.svg#close"></use>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="popup-total">
-                <div class="popup-total__title">Итого к оплате</div>
-                <div class="popup-total__price">49 500.00 ₽</div>
-                <a class="button button--big popup-total__button" href="#">перейти к оформлению</a>
-            </div>
-        </div>
     </div>
 </div>
 <!-- JS -->
