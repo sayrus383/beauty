@@ -25,6 +25,10 @@ class Service extends Model
         'price_list',
     ];
 
+    protected $casts = [
+        'price_list' => 'array'
+    ];
+
     protected $appends = ['image'];
 
     public function getImageAttribute()
