@@ -58,7 +58,7 @@
                         </svg>
                     </a></div>
                 <div class="header__right"><a class="header__phone" href="tel:+77010276651">+ 7 701 027 66 51</a><a
-                        class="header__shop" href="#"><span>Инетрнет-магазин</span>
+                        class="header__shop" href="#"><span>Интернет-магазин</span>
                         <svg class="header__shop-icon" width="7" height="7">
                             <use xlink:href="img/sprite.svg#link"></use>
                         </svg>

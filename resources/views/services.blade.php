@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1 class="section-title services-article__title">
-                        {{ get_translation('services') }}
+                        Услуги
                     </h1>
                 </div>
             </div>
