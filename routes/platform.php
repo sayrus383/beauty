@@ -101,6 +101,17 @@ Route::screen('example', ExampleScreen::class)
     });
 
 // translations
-Route::screen('translations/{translation}/edit', \App\Orchid\Screens\Translation\FormScreen::class)->name('platform.translations.edit');
-Route::screen('translations/create', \App\Orchid\Screens\Translation\FormScreen::class)->name('platform.translations.create');
-Route::screen('translations', \App\Orchid\Screens\Translation\ListScreen::class)->name('platform.translations.list');
+Route::screen('translations/{translation}/edit', \App\Orchid\Screens\Translation\FormScreen::class)
+    ->name('platform.translations.edit');
+Route::screen('translations/create', \App\Orchid\Screens\Translation\FormScreen::class)
+    ->name('platform.translations.create');
+Route::screen('translations', \App\Orchid\Screens\Translation\ListScreen::class)
+    ->name('platform.translations.list');
+
+//services
+Route::screen('/services', \App\Orchid\Screens\Service\ListScreen::class)
+    ->name('platform.services.list');
+Route::screen('/services/form', \App\Orchid\Screens\Service\FormScreen::class)
+    ->name('platform.services.create');
+Route::screen('/services/form/{service}', \App\Orchid\Screens\Service\FormScreen::class)
+    ->name('platform.services.edit');

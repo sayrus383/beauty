@@ -24,10 +24,12 @@ class PlatformProvider extends OrchidServiceProvider
      */
     public function registerMainMenu(): array
     {
-        return  [
+        return [
+            Menu::make('Услуги')
+                ->route('platform.services.list'),
+
             Menu::make('Переводы')
-                ->route('platform.translations.list')
-                ->title('Системное'),
+                ->route('platform.translations.list'),
         ];
     }
 
