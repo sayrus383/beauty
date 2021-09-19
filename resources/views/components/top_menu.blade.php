@@ -2,7 +2,7 @@
     <div class="col-12 header__col">
         <div class="header__left">
             <ul class="top-menu">
-                <li class="top-menu__item"><a class="top-menu__link" href="#">О нас</a></li>
+                <li class="top-menu__item"><a class="top-menu__link" href="{{ route('about') }}">О нас</a></li>
                 <li class="top-menu__item"><a class="top-menu__link"
                                               href="{{ route('services.index') }}">Услуги</a></li>
                 <li class="top-menu__item"><a class="top-menu__link" href="#">Об Основателе</a></li>

@@ -4,7 +4,8 @@
             <div class="col-12 footer__col">
                 <nav class="footer-menu">
                     <ul class="footer-menu__list">
-                        <li class="footer-menu__item"><a class="footer-menu__link" href="#">О нас</a></li>
+                        <li class="footer-menu__item"><a class="footer-menu__link" href="{{ route('about') }}">О нас</a>
+                        </li>
                         <li class="footer-menu__item"><a class="footer-menu__link" href="{{ route('services.index') }}">Услуги</a>
                         </li>
                         <li class="footer-menu__item"><a class="footer-menu__link" href="#">Наша команда</a></li>
