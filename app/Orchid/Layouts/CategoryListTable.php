@@ -2,14 +2,14 @@
 
 namespace App\Orchid\Layouts;
 
-use App\Models\Service;
+use App\Models\Category;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
 
-class ServiceListTable extends Table
+class CategoryListTable extends Table
 {
     /**
      * Data source.
@@ -19,7 +19,7 @@ class ServiceListTable extends Table
      *
      * @var string
      */
-    protected $target = 'services';
+    protected $target = 'categories';
 
     /**
      * Get the table cells to be displayed.
@@ -32,27 +32,27 @@ class ServiceListTable extends Table
             TD::make('name', __('Name'))
                 ->sort()
                 ->cantHide()
-                ->render(function (Service $service) {
-                    return $service->name;
+                ->render(function (Category $category) {
+                    return $category->name;
                 }),
 
             TD::make('id', 'ID')
                 ->align(TD::ALIGN_CENTER)
                 ->width('100px')
-                ->render(function (Service $service) {
+                ->render(function (Category $category) {
                     return DropDown::make()
                         ->icon('options-vertical')
                         ->list([
 
                             Link::make(__('Edit'))
-                                ->route('platform.services.edit', $service->id)
+                                ->route('platform.categories.edit', $category->id)
                                 ->icon('icon-pencil'),
 
                             Button::make(__('Delete'))
                                 ->method('remove')
                                 ->confirm('Вы действительно хотите удалить ?')
                                 ->parameters([
-                                    'id' => $service->id,
+                                    'id' => $category->id,
                                 ])
                                 ->icon('icon-trash'),
                         ]);

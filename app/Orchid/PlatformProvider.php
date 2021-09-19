@@ -25,6 +25,8 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
+            Menu::make('Категории')
+                ->route('platform.categories.list'),
             Menu::make('Услуги')
                 ->route('platform.services.list'),
             Menu::make('Настройки')

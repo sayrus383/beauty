@@ -185,10 +185,12 @@
             <div class="col-12">
                 <div class="tabs team-section__tabs">
                     <ul class="tabs-toggle">
-                        <li class="tabs-toggle__item on" data-toggle="#tab-1">Визажисты</li>
-                        <li class="tabs-toggle__item" data-toggle="#tab-2">Ногтевой сервис</li>
-                        <li class="tabs-toggle__item" data-toggle="#tab-3">Парикмахер-cтилисты</li>
-                        <li class="tabs-toggle__item" data-toggle="#tab-4">Массажисты</li>
+                        @foreach($categories as $category)
+                            <li class="tabs-toggle__item {{ $loop->first ? 'on' : null }}"
+                                data-toggle="#tab-{{ $category->id }}">
+                                {{ $category->name }}
+                            </li>
+                        @endforeach
                     </ul>
                     <div class="tabs__panes">
                         <div class="tabs__pane on visible" id="tab-1">

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Orchid\Screens\Service;
+namespace App\Orchid\Screens\Category;
 
-use App\Models\Service;
-use App\Orchid\Layouts\ServiceListTable;
+use App\Models\Category;
+use App\Orchid\Layouts\CategoryListTable;
+use Illuminate\Http\Request;
 use Orchid\Screen\Action;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Layout;
@@ -17,8 +18,7 @@ class ListScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Список услуг';
-
+    public $name = 'Категории';
 
     /**
      * Query data.
@@ -28,7 +28,7 @@ class ListScreen extends Screen
     public function query(): array
     {
         return [
-            'services' => Service::all()
+            'categories' => Category::all()
         ];
     }
 
@@ -42,7 +42,7 @@ class ListScreen extends Screen
         return [
             Link::make(__('Add'))
                 ->icon('icon-plus')
-                ->href(route('platform.services.create')),
+                ->href(route('platform.categories.create')),
         ];
     }
 
@@ -54,16 +54,15 @@ class ListScreen extends Screen
     public function layout(): array
     {
         return [
-            ServiceListTable::class
+            CategoryListTable::class
         ];
     }
 
-
     public function remove(Request $request)
     {
-        Service::whereId($request->input('id'))->delete();
-        Toast::info('Услуга удалена');
+        Category::whereId($request->input('id'))->delete();
+        Toast::info('Категория удалена');
 
-        return redirect()->route('platform.services.list');
+        return redirect()->route('platform.categories.list');
     }
 }

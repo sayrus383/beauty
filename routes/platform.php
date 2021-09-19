@@ -116,6 +116,14 @@ Route::screen('/services/form', \App\Orchid\Screens\Service\FormScreen::class)
 Route::screen('/services/form/{service}', \App\Orchid\Screens\Service\FormScreen::class)
     ->name('platform.services.edit');
 
+//categories
+Route::screen('/categories', \App\Orchid\Screens\Category\ListScreen::class)
+    ->name('platform.categories.list');
+Route::screen('/categories/form', \App\Orchid\Screens\Category\FormScreen::class)
+    ->name('platform.categories.create');
+Route::screen('/categories/form/{category}', \App\Orchid\Screens\Category\FormScreen::class)
+    ->name('platform.categories.edit');
+
 //Variables
 Route::screen('variable/settings/edit', \App\Orchid\Screens\Variable\SettingScreen::class)
     ->name('platform.settings.form');
