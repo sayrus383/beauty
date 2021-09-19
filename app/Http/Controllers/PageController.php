@@ -12,4 +12,11 @@ class PageController extends Controller
 
         return view('about', compact('variable'));
     }
+
+    public function founder()
+    {
+        $variable = get_variable('founder');
+
+        return view('founder', compact('variable'));
+    }
 }

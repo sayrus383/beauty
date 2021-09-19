@@ -8,7 +8,8 @@
                         </li>
                         <li class="footer-menu__item"><a class="footer-menu__link" href="{{ route('services.index') }}">Услуги</a>
                         </li>
-                        <li class="footer-menu__item"><a class="footer-menu__link" href="#">Наша команда</a></li>
+                        <li class="footer-menu__item"><a class="footer-menu__link" href="{{ route('founder') }}">Об
+                                Основателе</a></li>
                         <li class="footer-menu__item"><a class="footer-menu__link" href="#">Контакты</a></li>
                         <li class="footer-menu__item"><a class="footer-menu__link"
                                                          href="{{ $settings->getField('link', false) }}">Интернет

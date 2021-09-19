@@ -5,7 +5,8 @@
                 <li class="top-menu__item"><a class="top-menu__link" href="{{ route('about') }}">О нас</a></li>
                 <li class="top-menu__item"><a class="top-menu__link"
                                               href="{{ route('services.index') }}">Услуги</a></li>
-                <li class="top-menu__item"><a class="top-menu__link" href="#">Об Основателе</a></li>
+                <li class="top-menu__item"><a class="top-menu__link" href="{{ route('founder') }}">Об Основателе</a>
+                </li>
                 <li class="top-menu__item"><a class="top-menu__link" href="#">Контакты</a></li>
             </ul>
         </div>
