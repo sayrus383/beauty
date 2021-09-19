@@ -135,3 +135,5 @@ Route::screen('/employees/form/{employee}', \App\Orchid\Screens\Employee\FormScr
 //Variables
 Route::screen('variable/settings/edit', \App\Orchid\Screens\Variable\SettingScreen::class)
     ->name('platform.settings.form');
+Route::screen('variable/home/edit', \App\Orchid\Screens\Variable\HomeScreen::class)
+    ->name('platform.home.form');

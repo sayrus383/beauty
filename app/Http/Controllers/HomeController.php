@@ -8,6 +8,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('layouts.home');
+        $variable = get_variable('home');
+
+        return view('layouts.home', compact('variable'));
     }
 }
