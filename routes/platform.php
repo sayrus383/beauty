@@ -124,6 +124,14 @@ Route::screen('/categories/form', \App\Orchid\Screens\Category\FormScreen::class
 Route::screen('/categories/form/{category}', \App\Orchid\Screens\Category\FormScreen::class)
     ->name('platform.categories.edit');
 
+//employees
+Route::screen('/employees', \App\Orchid\Screens\Employee\ListScreen::class)
+    ->name('platform.employees.list');
+Route::screen('/employees/form', \App\Orchid\Screens\Employee\FormScreen::class)
+    ->name('platform.employees.create');
+Route::screen('/employees/form/{employee}', \App\Orchid\Screens\Employee\FormScreen::class)
+    ->name('platform.employees.edit');
+
 //Variables
 Route::screen('variable/settings/edit', \App\Orchid\Screens\Variable\SettingScreen::class)
     ->name('platform.settings.form');

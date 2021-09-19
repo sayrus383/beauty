@@ -20,6 +20,7 @@ class FormScreen extends TranslationsScreen
     /**
      * Query data.
      *
+     * @param Category $category
      * @return array
      */
     public function query(Category $category): array

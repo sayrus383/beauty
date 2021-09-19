@@ -27,6 +27,8 @@ class PlatformProvider extends OrchidServiceProvider
         return [
             Menu::make('Категории')
                 ->route('platform.categories.list'),
+            Menu::make('Сотрудники')
+                ->route('platform.employees.list'),
             Menu::make('Услуги')
                 ->route('platform.services.list'),
             Menu::make('Настройки')
