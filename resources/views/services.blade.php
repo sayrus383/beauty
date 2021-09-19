@@ -38,176 +38,35 @@
                         </p>
                     </div>
                     <h2 class="section-title section-title--grey services-article__sub-title">Прайс</h2>
-                    <div class="faq-block on">
-                        <div class="faq-block__toggle">
-                            <h4 class="faq-block__title">Маникюр</h4>
-                            <svg class="faq-block__icon" width="21" height="12">
-                                <use xlink:href="img/sprite.svg#faq-arrow"></use>
-                            </svg>
-                        </div>
-                        <div class="faq-block__hidden visible">
-                            <div class="faq-block__descr">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <td>Экспресс-маникюр</td>
-                                            <td>1800 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Женский маникюр</td>
-                                            <td>2500 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Мужской маникюр</td>
-                                            <td>от 2700 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Детский маникюр (до 14 лет)</td>
-                                            <td>1400 ₽</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+
+                    @if ($service->price_list)
+                        @foreach(collect($service->price_list)->groupBy('name') as $name => $newServices)
+                            <div class="faq-block {{ $loop->first ? 'on' : null }}">
+                                <div class="faq-block__toggle">
+                                    <h4 class="faq-block__title">{{ $name }}</h4>
+                                    <svg class="faq-block__icon" width="21" height="12">
+                                        <use xlink:href="/img/sprite.svg#faq-arrow"></use>
+                                    </svg>
+                                </div>
+                                <div class="faq-block__hidden {{ $loop->first ? 'visible' : 'hidden' }}">
+                                    <div class="faq-block__descr">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <tbody>
+                                                @foreach($newServices as $newService)
+                                                    <tr>
+                                                        <td>{{ $newService['service_title'] ?? '-' }}</td>
+                                                        <td>{{ $newService['service_priceZ'] ?? '-' }}</td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="faq-block">
-                        <div class="faq-block__toggle">
-                            <h4 class="faq-block__title">Моделирование ногтей</h4>
-                            <svg class="faq-block__icon" width="21" height="12">
-                                <use xlink:href="img/sprite.svg#faq-arrow"></use>
-                            </svg>
-                        </div>
-                        <div class="faq-block__hidden hidden">
-                            <div class="faq-block__descr">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <td>Экспресс-маникюр</td>
-                                            <td>1800 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Женский маникюр</td>
-                                            <td>2500 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Мужской маникюр</td>
-                                            <td>от 2700 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Детский маникюр (до 14 лет)</td>
-                                            <td>1400 ₽</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="faq-block">
-                        <div class="faq-block__toggle">
-                            <h4 class="faq-block__title">Педикюр</h4>
-                            <svg class="faq-block__icon" width="21" height="12">
-                                <use xlink:href="img/sprite.svg#faq-arrow"></use>
-                            </svg>
-                        </div>
-                        <div class="faq-block__hidden hidden">
-                            <div class="faq-block__descr">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <td>Экспресс-маникюр</td>
-                                            <td>1800 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Женский маникюр</td>
-                                            <td>2500 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Мужской маникюр</td>
-                                            <td>от 2700 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Детский маникюр (до 14 лет)</td>
-                                            <td>1400 ₽</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="faq-block">
-                        <div class="faq-block__toggle">
-                            <h4 class="faq-block__title">Покрытие</h4>
-                            <svg class="faq-block__icon" width="21" height="12">
-                                <use xlink:href="img/sprite.svg#faq-arrow"></use>
-                            </svg>
-                        </div>
-                        <div class="faq-block__hidden hidden">
-                            <div class="faq-block__descr">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <td>Экспресс-маникюр</td>
-                                            <td>1800 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Женский маникюр</td>
-                                            <td>2500 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Мужской маникюр</td>
-                                            <td>от 2700 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Детский маникюр (до 14 лет)</td>
-                                            <td>1400 ₽</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="faq-block">
-                        <div class="faq-block__toggle">
-                            <h4 class="faq-block__title">Cagel</h4>
-                            <svg class="faq-block__icon" width="21" height="12">
-                                <use xlink:href="img/sprite.svg#faq-arrow"></use>
-                            </svg>
-                        </div>
-                        <div class="faq-block__hidden hidden">
-                            <div class="faq-block__descr">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <td>Экспресс-маникюр</td>
-                                            <td>1800 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Женский маникюр</td>
-                                            <td>2500 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Мужской маникюр</td>
-                                            <td>от 2700 ₽</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Детский маникюр (до 14 лет)</td>
-                                            <td>1400 ₽</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
