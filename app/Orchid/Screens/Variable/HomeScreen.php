@@ -7,7 +7,6 @@ use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Matrix;
 use Orchid\Screen\Fields\Picture;
 use Orchid\Screen\Fields\Quill;
-use Orchid\Screen\Fields\TextArea;
 use Orchid\Support\Facades\Layout;
 
 class HomeScreen extends VariableScreen

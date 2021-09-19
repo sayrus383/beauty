@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'О нас')
+@section('title', $variable->getField('title') ?? 'О нас')
 
 @section('content')
     <!-- About Article -->
@@ -13,28 +13,30 @@
                                                                                               srcset="img/about-article-1@2x.jpg 2x"
                                                                                               alt="alt"></picture>
                     <div class="about-article__slogan hidden-sm">
-                        <p>Мы используем только те бренды, которые показали лучшие результаты в работе.</p>
+                        <p>
+                            {{ $variable->getField('slogan') }}
+                        </p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-md-6">
-                    <h1 class="section-title about-article__title">О нас</h1>
+                    <h1 class="section-title about-article__title">
+                        {{ $variable->getField('title') ?? 'О нас' }}
+                    </h1>
                     <div class="about-article__text">
-                        <p>№1 Beauty — уникальные пространства, в которых слились в единое целое высококачественный
-                            сервис и искусство создания истинно элегантных и стильных образов.</p>
+                        <p>
+                            {{ $variable->getField('text') }}
+                        </p>
                     </div>
                     <picture class="about-article__picture about-article__picture--right"><img
                             class="about-article__img" src="img/about-article-2.jpg"
                             srcset="img/about-article-2@2x.jpg 2x" alt="alt"></picture>
                     <div class="about-article__slogan visible-sm">
-                        <p>Мы используем только те бренды, которые показали лучшие результаты в работе.</p>
+                        <p>
+                            {{ $variable->getField('slogan') }}
+                        </p>
                     </div>
                     <div class="about-article__text">
-                        <p>Наш бренд был основан в 2014 году для людей, которым важен уют , сервис и качество услуг!
-                            Наши гости могут воспользоваться параллельным сервисом в 4 или 6 рук, чтобы освободить время
-                            для более важных дел. </p>
-                        <p>Наши гости могут воспользоваться параллельным сервисом в 4 или 6 рук, чтобы освободить время
-                            для более важных дел. Наш бренд был основан в 2014 году для людей, которым важен уют ,
-                            сервис и качество услуг!</p>
+                       {!! $variable->getField('description') !!}
                     </div>
                 </div>
             </div>
