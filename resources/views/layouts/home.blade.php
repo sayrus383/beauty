@@ -55,38 +55,46 @@
                             </svg>
                         </a></div>
                     <ul class="social main-header__social">
-                        @if ($settings->getField('instagram', false))
-                            <li class="social__item"><a class="social__link"
-                                                        href="{{ $settings->getField('instagram', false) }}">
+                        <li class="social__item">
+                            @if ($settings->getField('instagram', false))
+                                <a class="social__link"
+                                   href="{{ $settings->getField('instagram', false) }}">
                                     <svg class="social__icon" width="16" height="16">
                                         <use xlink:href="/img/sprite.svg#instagram"></use>
                                     </svg>
-                                </a></li>
-                        @endif
-                        @if ($settings->getField('youtube', false))
-                            <li class="social__item"><a class="social__link"
-                                                        href="{{ $settings->getField('youtube', false) }}">
+                                </a>
+                            @endif
+                        </li>
+                        <li class="social__item">
+                            @if ($settings->getField('youtube', false))
+                                <a class="social__link"
+                                   href="{{ $settings->getField('youtube', false) }}">
                                     <svg class="social__icon" width="20" height="14">
                                         <use xlink:href="/img/sprite.svg#youtube"></use>
                                     </svg>
-                                </a></li>
-                        @endif
-                        @if ($settings->getField('facebook', false))
-                            <li class="social__item"><a class="social__link"
-                                                        href="{{ $settings->getField('facebook', false) }}">
+                                </a>
+                            @endif
+                        </li>
+                        <li class="social__item">
+                            @if ($settings->getField('facebook', false))
+                                <a class="social__link"
+                                   href="{{ $settings->getField('facebook', false) }}">
                                     <svg class="social__icon" width="8" height="16">
                                         <use xlink:href="/img/sprite.svg#facebook"></use>
                                     </svg>
-                                </a></li>
-                        @endif
-                        @if ($settings->getField('twitter', false))
-                            <li class="social__item"><a class="social__link"
-                                                        href="{{ $settings->getField('twitter', false) }}">
+                                </a>
+                            @endif
+                        </li>
+                        <li class="social__item">
+                            @if ($settings->getField('twitter', false))
+                                <a class="social__link"
+                                   href="{{ $settings->getField('twitter', false) }}">
                                     <svg class="social__icon" width="18" height="14">
                                         <use xlink:href="/img/sprite.svg#twitter"></use>
                                     </svg>
-                                </a></li>
-                        @endif
+                                </a>
+                            @endif
+                        </li>
                     </ul>
                 </div>
             </div>
