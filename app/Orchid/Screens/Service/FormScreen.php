@@ -7,6 +7,8 @@ use App\Orchid\Screens\Abstraction\TranslationsScreen;
 use Illuminate\Http\Request;
 use Orchid\Screen\Fields\Matrix;
 use Orchid\Screen\Fields\Picture;
+use Orchid\Screen\Fields\Quill;
+use Orchid\Screen\Fields\Select;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
 use Orchid\Screen\Fields\Input;
@@ -39,17 +41,8 @@ class FormScreen extends TranslationsScreen
         return [
             Input::make('service.name')
                 ->title('Название')->required(),
-            TextArea::make('service.description')
+            Quill::make('service.description')
                 ->title('Описание')->required(),
-
-            Matrix::make('service.price_list')
-                ->title('Прайс')
-                ->columns(['name', 'service_title', 'service_price'])
-                ->fields([
-                    'name'          => Input::make()->required(),
-                    'service_title' => Input::make()->required(),
-                    'service_price' => Input::make()->required(),
-                ])
         ];
     }
 
@@ -57,10 +50,16 @@ class FormScreen extends TranslationsScreen
     {
         return [
             Layout::rows([
+                Input::make('service.price')
+                    ->title('Прайс'),
+
                 Picture::make('service.image')
                     ->targetId()
-                    ->required()
                     ->title('Фото'),
+
+                Select::make('service.service_id')->fromModel(Service::whereNull('service_id'), 'name')
+                    ->empty('Не указано')
+                    ->title('Услуга (если это подуслуга)')
             ])
         ];
 

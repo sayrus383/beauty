@@ -33,43 +33,61 @@
                                                                     alt="{{ $service->name }}">
                     </picture>
                     <div class="services-article__text">
-                        <p>
-                            {{ $service->description }}
-                        </p>
+                        {!! $service->description !!}
                     </div>
 
-                    @if (!empty($service->price_list))
+                    @if ($service->services->isNotEmpty())
                         <h2 class="section-title section-title--grey services-article__sub-title">Прайс</h2>
 
-                        @foreach(collect($service->price_list)->groupBy('name') as $name => $newServices)
-                            <div class="faq-block {{ $loop->first ? 'on' : null }}">
+                        @foreach($service->services as $newService)
+                            <a class="faq-block call-popup" href="#popup-{{ $newService->id }}" data-bg="1">
                                 <div class="faq-block__toggle">
-                                    <h4 class="faq-block__title">{{ $name }}</h4>
+                                    <h4 class="faq-block__title">
+                                        {{ $newService->name }}
+                                    </h4>
+
+                                    @if ($newService->price)
+                                        <p class="faq-block__title">
+                                            {{ $newService->price }}
+                                        </p>
+                                    @endif
+
                                     <svg class="faq-block__icon" width="21" height="12">
                                         <use xlink:href="/img/sprite.svg#faq-arrow"></use>
                                     </svg>
                                 </div>
-                                <div class="faq-block__hidden {{ $loop->first ? 'visible' : 'hidden' }}">
-                                    <div class="faq-block__descr">
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <tbody>
-                                                @foreach($newServices as $newService)
-                                                    <tr>
-                                                        <td>{{ $newService['service_title'] ?? '-' }}</td>
-                                                        <td>{{ $newService['service_priceZ'] ?? '-' }}</td>
-                                                    </tr>
-                                                @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </a>
                         @endforeach
                     @endif
                 </div>
             </div>
         </div>
     </article>
+
+    @foreach($service->services as $newService)
+        <div class="popup" id="popup-{{ $newService->id }}">
+            <div class="popup__inner">
+                <div class="popup__header">
+                    <div class="popup__close">
+                        <svg class="popup__close-icon" width="20" height="20">
+                            <use xlink:href="img/sprite.svg#close"></use>
+                        </svg>
+                    </div>
+                    <h3 class="popup__title">{{ $newService->name }}</h3>
+                </div>
+                @if ($newService->image_url)
+                    <picture class="popup__picture">
+                        <img class="popup__img" src="{{ $newService->image_url }}"
+                             srcset="{{ $newService->image_url }} 2x" alt="alt">
+                    </picture>
+                @endif
+
+                <div class="popup__body">
+                    <div class="popup__descr">
+                        {!! $newService->description !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection

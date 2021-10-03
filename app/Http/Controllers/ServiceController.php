@@ -16,7 +16,7 @@ class ServiceController extends Controller
             $service = Service::firstOrFail();
         }
 
-        $service->load('attachment');
+        $service->load('attachment', 'services.attachment');
 
         return view('services', compact('services', 'service'));
     }

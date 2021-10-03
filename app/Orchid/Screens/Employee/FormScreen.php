@@ -8,8 +8,8 @@ use App\Orchid\Screens\Abstraction\TranslationsScreen;
 use Illuminate\Http\Request;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Picture;
+use Orchid\Screen\Fields\Quill;
 use Orchid\Screen\Fields\Select;
-use Orchid\Screen\Fields\TextArea;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
 
@@ -60,7 +60,7 @@ class FormScreen extends TranslationsScreen
         return [
             Input::make('employee.position')
                 ->title('Должность')->required(),
-            TextArea::make('employee.description')
+            Quill::make('employee.description')
                 ->title('Описание')->required(),
             Input::make('employee.address')
                 ->title('Адрес'),

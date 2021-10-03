@@ -16,18 +16,15 @@ class Service extends Model
     protected $fillable = [
         'name',
         'description',
-        'price_list',
+        'price',
+        'service_id',
     ];
 
     protected $translatable = [
         'name',
         'description',
-        'price_list',
     ];
 
-    protected $casts = [
-        'price_list' => 'array'
-    ];
 
     protected $appends = ['image'];
 
@@ -39,5 +36,15 @@ class Service extends Model
     public function getImageUrlAttribute()
     {
         return $this->attachment->first() ? $this->attachment->first()->url() : null;
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
+
+    public function services()
+    {
+        return $this->hasMany(Service::class, 'service_id');
     }
 }
