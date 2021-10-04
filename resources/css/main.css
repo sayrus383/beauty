@@ -3613,6 +3613,7 @@ a.faq-block {
 }
 
 .popup__img {
+    width: 100%;
     max-width: 100%;
     height: auto;
 }
@@ -3623,7 +3624,6 @@ a.faq-block {
 
 .popup__descr {
     font-size: 16px;
-    margin-left: 220px;
     margin-bottom: 50px;
 }
 
