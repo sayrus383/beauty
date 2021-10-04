@@ -9,8 +9,8 @@ class ServiceController extends Controller
 {
     public function index(Request $request)
     {
-        $services = Service::all();
-        $service = $request->input('id') ? Service::find($request->input('id')) : $services->first();
+        $services = Service::whereNull('service_id')->get();
+        $service = $request->input('id') ? Service::whereNull('service_id')->find($request->input('id')) : $services->first();
 
         if (is_null($service)) {
             $service = Service::firstOrFail();
